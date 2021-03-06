@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.caro {
+  position: relative;
+}
+
+.imageSpace {
+  height: 250px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.caroCard {
+  width: 100%;
+  height: 250px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.caroCard img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.caroCard div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#121212AA), color-stop(#12121233), to(transparent));
+  background: linear-gradient(180deg, #121212AA, #12121233, transparent);
+  color: white;
+}
+
+.caroCard div h3 {
+  margin-top: 5px;
+}
+
+#carOne:checked ~ #coffeeOne,
+#carTwo:checked ~ #coffeeTwo,
+#carThree:checked ~ #coffeeThree {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+/*# sourceMappingURL=style.css.map */

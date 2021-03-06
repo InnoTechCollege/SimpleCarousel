@@ -1,0 +1,89 @@
+// Just adding in my normalizer and switching the font
+// Please note that this is for mobile!
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+// Here we set the container to relative 
+// so the absolute positioned children use this container as a starting point
+
+.caro {
+    position: relative;
+}
+
+// This is the empty div that that images will end up covering
+// We give a hard coded height of 250px and width of 100%
+// Margin on the bottom to push the radio button away
+
+.imageSpace {
+    height: 250px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+// Styling for the actual card that appears
+// Notice the width and height match the empty div styled above
+// The position is absolute so we can move the card to the top of the carousel using top and left
+// The transition, opacity and scale are all for the animation for the item popping in and out
+// Notice by default the card has an opacity of 0
+// WARNING if you need the cards to be clickable, you need to do more than just opactiy.
+// You may also need to scale down the card to 0 so it isn't sitting on the page invisible.
+
+.caroCard {
+    width: 100%;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+// Making sure the img inside each card fits the width and is cropped using object-fit cover
+
+.caroCard img {
+    width: 100%;
+    object-fit: cover;
+}
+
+// This is the overlay that sits on top of each image
+// We position it absolutely so we can move it to the top left
+// Width and height set to 100% to fill the container
+// The background is set to a linear-gradient that starts as dark grey and moves to transparent
+
+.caroCard div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #121212AA, #12121233, transparent);
+    color: white;
+}
+
+// Give some margin to the text on the image
+.caroCard div h3 {
+    margin-top: 5px;
+}
+
+// Here we have the CSS that actually controls the cards showing up
+// We have condensed the selectors using , to reduce the CSS needed
+// We select the particular radio button but only when checked, 
+// and then find the particular card we want to "turn on" by using the younger sibling selector
+// We then set opacity to1 and scale to 1
+// This is like saying "when radio button one is checked, turn on cardOne"
+#carOne:checked~#coffeeOne,
+#carTwo:checked~#coffeeTwo,
+#carThree:checked~#coffeeThree {
+    opacity: 1;
+    transform: scale(1);
+}
+
+// You can't actually style the radio buttons in CSS, you need to use the
+// Invisible Checkbox hack for that (but radio button instead of checkbox)

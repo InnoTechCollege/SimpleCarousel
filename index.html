@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- This is the container for the carousel 
+    The order of the contents matters a lot! This is because we can't go backwards with CSS selectors
+    Only forwards looking for decendents or younger siblings -->
+
+    <section class="caro">
+        <!-- This empty div is to get the images above the radio buttons (this is not the only way to do this) -->
+        <div class="imageSpace"></div>
+        <!-- These buttons are what control which item will show
+        They need to have a matching name so that only one can be selected
+        The first input has the checked attribute so that it starts selected
+        Each one needs a unqiue ID -->
+        <input type="radio" name="coffee" id="carOne" checked>
+        <input type="radio" name="coffee" id="carTwo">
+        <input type="radio" name="coffee" id="carThree">
+
+        <!-- These are the cards that will show above the radio buttons
+        These divs could contain anything, I chose an image and some text overlay
+        Each div needs it's own unique ID and a class for sharing style -->
+        <div class="caroCard" id="coffeeOne">
+            <img class="coffeeImage"
+                src="https://images.pexels.com/photos/867470/pexels-photo-867470.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                alt="">
+            <div class="titleContainer">
+                <h3>Coffee with love</h3>
+            </div>
+        </div>
+
+        <!-- Card Two -->
+        <div class="caroCard" id="coffeeTwo">
+            <img class="coffeeImage"
+                src="https://images.pexels.com/photos/6347/coffee-cup-working-happy.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                alt="">
+            <div class="titleContainer">
+                <h3>Coffee with a smile</h3>
+            </div>
+        </div>
+
+        <!-- Card Three -->
+        <div class="caroCard" id="coffeeThree">
+            <img class="coffeeImage"
+                src="https://images.pexels.com/photos/324028/pexels-photo-324028.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                alt="">
+            <div class="titleContainer">
+                <h3>Coffee with handles</h3>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
